@@ -175,7 +175,7 @@ export default class AudioRecorder extends React.Component<AudioRecorderProps, A
           {!this.state.audioData && !this.state.isRecording && this.props.recordLabel}
           {!this.state.audioData && this.state.isRecording && this.props.recordingLabel}
         </button>
-        {this.state.audioData &&
+        {this.state.audioData && false &&
           <button
             className="AudioRecorder-remove"
             onClick={this.onRemoveClick}
@@ -183,7 +183,7 @@ export default class AudioRecorder extends React.Component<AudioRecorderProps, A
             {this.props.removeLabel}
           </button>
         }
-        {this.state.audioData && this.props.downloadable &&
+        {this.state.audioData && this.props.downloadable && false &&
           <button
             className="AudioRecorder-download"
             onClick={this.onDownloadClick}
