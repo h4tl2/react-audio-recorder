@@ -20,6 +20,7 @@ interface AudioRecorderProps {
   onPause?: () => void,
   onPlay?: () => void,
   onRecordStart?: () => void,
+  onRecordStop?: (audioData) => void,
 
   playLabel?: string,
   playingLabel?: string,
@@ -103,6 +104,7 @@ export default class AudioRecorder extends React.Component<AudioRecorderProps, A
         audioData: this.waveInterface.audioData
       });
     }
+    if (this.props.onRecordStop) this.props.onRecordStop(this.waveInterface.audioData);
   }
 
   startPlayback() {
